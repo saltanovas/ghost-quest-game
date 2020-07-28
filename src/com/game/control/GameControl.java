@@ -278,7 +278,9 @@ public class GameControl implements ActionListener {
         switch (e.getActionCommand()) {
             case "tekstas":
                 try {
-                    Socket s = new Socket("192.168.0.104", 9000);
+                    Socket s = new Socket();
+                    s.connect(new InetSocketAddress("192.168.0.104", 9000), 5000);
+                    s.setSoTimeout(5000);
                     PrintWriter pw = new PrintWriter(s.getOutputStream());
                     pw.write(textField.getText());
                     pw.flush();
@@ -309,7 +311,9 @@ public class GameControl implements ActionListener {
 
                 if (file != null) {
                     try {
-                        Socket s = new Socket("192.168.0.104", 9005);
+                        Socket s = new Socket();
+                        s.connect(new InetSocketAddress("192.168.0.104", 9005), 5000);
+                        s.setSoTimeout(5000);
                         DataOutputStream os = new DataOutputStream(s.getOutputStream());
 
                         File input_file = new File(file);
