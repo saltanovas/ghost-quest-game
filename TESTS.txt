@@ -1,0 +1,105 @@
+eitiD(11);
+int a;
+eitiK(a);
+if(a == 0){
+a++;
+eitiA(a);
+}
+
+
+eitiD(11);
+int a;
+eitiK(a);
+if(a != 0){
+a++;
+eitiA(a);
+}
+else{
+a = 5;
+eitiA(a);
+}
+
+
+eitiK(2);
+int a = 5;
+while (a != 5)
+{
+eitiZ(1);
+eitiK(1);
+}
+
+
+eitiK(2);
+int a = 1;
+while(a != 3){
+eitiA(a);
+eitiK(a);
+}
+
+
+eitiK(5);
+for( int i = 0; i < 5; i++)
+{
+eitiD(1);
+} 
+
+
+eitiD(1);
+for( int i = 0; i < 5; i++)
+{
+if( i > 0)
+{
+eitiD(1);
+}
+else
+{
+eitiK(1);
+}
+} 
+
+
+eitiA(2);
+int a;
+for(int i = 0; i < 3; i++)
+{
+for( int j = 0; j < 2; j++)
+{
+if( a == 0)
+{
+eitiA(1);
+}
+eitiK(1);
+}
+}
+
+
+eitiD(1);
+for(int i = 0; i < 3; i++)
+{
+if ( i == i)
+{
+eitiA(1);
+}
+for(int j = 0; j < 2; j++)
+{
+eitiD(1);
+}
+}
+
+
+eitiZ(2);
+int a;
+int b;
+while( a < 5)
+{
+while ( b < 3)
+{
+eitiD(1);
+b++;
+}
+eitiK(1);
+a++;
+}
+
+
+
