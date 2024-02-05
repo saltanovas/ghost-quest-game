@@ -10,12 +10,10 @@ Adventure Java game, where players navigate a dynamic world, collecting chests, 
 
 <hr>
 
-The game can be optionaly controlled from the Androind application:
+The game can be optionally controlled from the Androind application:
 
 <p align="center" width="100%">
   <kbd>
     <img src="https://user-images.githubusercontent.com/65735690/88667719-6d209d00-d0ea-11ea-9c25-8dca3557075f.png">
   </kbd>
 </p>
-
-<hr>
