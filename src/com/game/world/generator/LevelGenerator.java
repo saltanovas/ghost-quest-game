@@ -1,21 +1,18 @@
 package com.game.world.generator;
 
 import com.game.framework.utils.MathHelper;
-import com.game.world.World;
 
 import java.util.HashSet;
 
 public class LevelGenerator {
-
     public static final int WORLD_SIZE = 5;
-
     private int posX;
     private int posY;
 
     private HashSet<MathHelper.Direction>[][] roomsData;
     private boolean[][] generated;
 
-    public void reset(){
+    public void reset() {
         this.roomsData = new HashSet[WORLD_SIZE][WORLD_SIZE];
         this.generated = new boolean[WORLD_SIZE][WORLD_SIZE];
         for (int i = 0; i < this.roomsData.length; i++) {
@@ -53,15 +50,15 @@ public class LevelGenerator {
     }
 
     public boolean finished() {
-        for (int i = 0; i < this.generated.length; i++) {
-            for (int j = 0; j < this.generated[i].length; j++) {
-                if (!this.generated[i][j]) return false;
+        for (boolean[] booleans : this.generated) {
+            for (boolean aBoolean : booleans) {
+                if (!aBoolean) return false;
             }
         }
         return true;
     }
 
-    public HashSet<MathHelper.Direction>[][] getRoomsData(){
+    public HashSet<MathHelper.Direction>[][] getRoomsData() {
         return this.roomsData;
     }
 }

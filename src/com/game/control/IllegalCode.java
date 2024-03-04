@@ -5,7 +5,6 @@ import javax.swing.plaf.FontUIResource;
 import java.awt.*;
 
 public class IllegalCode {
-
     public IllegalCode (String text){
       //  UIManager.put("OptionPane.background", DARK_BLUE);
       //  UIManager.put("OptionPane.messageForeground", WHITE);

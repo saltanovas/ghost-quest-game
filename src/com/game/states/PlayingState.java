@@ -6,9 +6,9 @@ import com.game.framework.gamestates.GameState;
 import com.game.framework.gamestates.GameStateManager;
 import com.game.framework.resources.Resources;
 import com.game.framework.utils.MathHelper;
+import com.game.world.Feature;
 import com.game.world.Tile;
 import com.game.world.World;
-import com.game.world.Feature;
 import com.game.world.generator.LevelGenerator;
 import com.game.world.generator.RoomData;
 
@@ -16,8 +16,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class PlayingState extends GameState {
-
-    private LevelGenerator generator;
+    private final LevelGenerator generator;
     public World world;
     public Player player;
 
@@ -39,9 +38,9 @@ public class PlayingState extends GameState {
 
         this.player.regenerateHealth();
 
-        this.playerAtacks();
+        this.playerAttacks();
 
-        if(World.chestCount == 0)
+        if (World.chestCount == 0)
             System.exit(-1);
     }
 
@@ -51,7 +50,13 @@ public class PlayingState extends GameState {
         this.player.render(graphics);
 
         graphics.setFont(new Font("TimesRoman", Font.PLAIN, 15));
-        graphics.drawString(player.getHp() + " " + player.getArmor() + " " + player.getGold() + " " + World.chestCount, 100, 400);
+        graphics.drawString(
+                "Health: " + player.getHp() +
+                        " Armor: " + player.getArmor() +
+                        " Gold: " + player.getGold() +
+                        " Chest Count: " + World.chestCount,
+                100, 400
+        );
         graphics.setColor(Color.RED);
         graphics.drawRect(this.player.getAttackBox().x, this.player.getAttackBox().y, this.player.getAttackBox().width, this.player.getAttackBox().height);
     }
@@ -171,10 +176,7 @@ public class PlayingState extends GameState {
         }
     }
 
-    /**
-     *
-     */
-    public void playerAtacks() {
+    public void playerAttacks() {
         this.player.decreaseTime();
         for (int i = 0; i < this.world.getRoom().getEnemies().size(); i++) {
             this.world.getRoom().getEnemies().get(i).move();

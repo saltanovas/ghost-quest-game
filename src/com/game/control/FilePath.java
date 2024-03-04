@@ -3,11 +3,9 @@ package com.game.control;
 import javax.swing.*;
 
 public class FilePath {
-
     String file;
 
     public String getFilePath() {
-
         JFileChooser jfc = new JFileChooser();
         int option = jfc.showSaveDialog(null);
 

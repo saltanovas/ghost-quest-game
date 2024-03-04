@@ -8,13 +8,11 @@ import java.awt.*;
 
 public class Entity extends Rectangle {
 
-    protected byte entityID;
-
     public boolean up;
     public boolean down;
     public boolean left;
     public boolean right;
-
+    protected byte entityID;
     protected int speed;
 
     protected MathHelper.Direction facing;
@@ -39,41 +37,41 @@ public class Entity extends Rectangle {
     }
 
     public synchronized void move() {
-        if (up){
+        if (up) {
             super.y -= this.speed;
             this.facing = MathHelper.Direction.NORTH;
             animationFrame = 0;
         }
-        if (down){
+        if (down) {
             super.y += this.speed;
             this.facing = MathHelper.Direction.SOUTH;
         }
-        if (left){
+        if (left) {
             super.x -= this.speed;
             this.facing = MathHelper.Direction.WEST;
         }
-        if (right){
+        if (right) {
             super.x += this.speed;
             this.facing = MathHelper.Direction.EAST;
         }
     }
 
     public void moveEnemy() {
-        if (up){
-            super.y -= this.speed-3;
+        if (up) {
+            super.y -= this.speed - 3;
             this.facing = MathHelper.Direction.NORTH;
             animationFrame = 0;
         }
-        if (down){
-            super.y += this.speed-3;
+        if (down) {
+            super.y += this.speed - 3;
             this.facing = MathHelper.Direction.SOUTH;
         }
-        if (left){
-            super.x -= this.speed-3;
+        if (left) {
+            super.x -= this.speed - 3;
             this.facing = MathHelper.Direction.WEST;
         }
-        if (right){
-            super.x += this.speed-3;
+        if (right) {
+            super.x += this.speed - 3;
             this.facing = MathHelper.Direction.EAST;
         }
     }
@@ -103,12 +101,12 @@ public class Entity extends Rectangle {
     }
 
     public void render(Graphics graphics) {
-        if(up || down || left || right){
+        if (up || down || left || right) {
             this.animationDelay++;
-            if(this.animationDelay == 70) {
+            if (this.animationDelay == 70) {
                 this.animationFrame = 1;
             }
-            if(this.animationDelay == 140) {
+            if (this.animationDelay == 140) {
                 this.animationDelay = 0;
                 this.animationFrame = 2;
             }
@@ -120,7 +118,7 @@ public class Entity extends Rectangle {
 
     public void handleCollisionWith(Tile tile) {
         Rectangle intersection = this.intersection(tile);
-        if (intersection.isEmpty() || !tile.isWall()){
+        if (intersection.isEmpty() || !tile.isWall()) {
             return;
         }
 

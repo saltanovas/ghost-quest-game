@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Resources {
-
     public static final byte TILE = 0;
     public static final byte WALL = 1;
     public static final byte PLAYER = 2;

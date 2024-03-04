@@ -1,11 +1,11 @@
 package com.game.framework.resources;
 
 import javax.imageio.ImageIO;
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 
 public class Loader {
-
     public static void load() {
         try {
             File texturesFolder = new File("res/textures");
@@ -40,7 +40,6 @@ public class Loader {
             Resources.TEXTURES.add(Resources.ENEMY_BACK, ImageIO.read(new File("res/textures/enemy_back.png")));
             Resources.TEXTURES.add(Resources.ENEMY_BACK1, ImageIO.read(new File("res/textures/enemy_back1.png")));
             Resources.TEXTURES.add(Resources.ENEMY_BACK2, ImageIO.read(new File("res/textures/enemy_back2.png")));
-
         } catch (IOException e) {
             e.printStackTrace();
         }

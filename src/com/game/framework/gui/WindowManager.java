@@ -5,11 +5,10 @@ import java.awt.*;
 import java.awt.event.KeyListener;
 
 public class WindowManager {
-
-    private JFrame frame;
-    private JPanel panel;
     public static final int WIDTH = 800;
     public static final int HEIGHT = 450;
+    private final JFrame frame;
+    private JPanel panel;
 
     public WindowManager() {
         this.frame = new JFrame("Game");

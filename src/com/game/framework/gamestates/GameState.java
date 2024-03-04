@@ -3,10 +3,9 @@ package com.game.framework.gamestates;
 import java.awt.*;
 
 public abstract class GameState {
+    public GameStateManager gameStateManager;
 
-     public GameStateManager gameStateManager;
-
-    protected GameState(GameStateManager manager){
+    protected GameState(GameStateManager manager) {
         this.gameStateManager = manager;
     }
 

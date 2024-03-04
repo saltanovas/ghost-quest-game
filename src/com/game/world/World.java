@@ -10,11 +10,10 @@ import com.game.world.generator.RoomData;
 import java.util.HashSet;
 
 public class World {
-
-    private Room[][] rooms;
+    public static int chestCount = 12;
+    private final Room[][] rooms;
     private int currentX;
     private int currentY;
-    public static int chestCount = 12;
 
     public World(HashSet<MathHelper.Direction>[][] roomsData) {
         this.rooms = new Room[roomsData.length][roomsData[0].length];
@@ -38,7 +37,7 @@ public class World {
         return rooms;
     }
 
-    public Room getRoomRandom(){
+    public Room getRoomRandom() {
         return rooms[MathHelper.randomInt(LevelGenerator.WORLD_SIZE)][MathHelper.randomInt(LevelGenerator.WORLD_SIZE)];
     }
 

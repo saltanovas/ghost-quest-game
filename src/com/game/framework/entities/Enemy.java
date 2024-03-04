@@ -2,17 +2,12 @@ package com.game.framework.entities;
 
 import com.game.framework.resources.Resources;
 import com.game.framework.utils.MathHelper;
-import com.game.world.Feature;
-import com.game.world.Tile;
-
-import java.awt.*;
 
 /**
  * defines enemy
  */
 public class Enemy extends Entity {
-
-    private Player target;
+    private final Player target;
 
     private int hp;
 
@@ -28,6 +23,7 @@ public class Enemy extends Entity {
 
     /**
      * copy of enemy's parameters
+     *
      * @param copy
      */
     public Enemy(Enemy copy) {
@@ -39,7 +35,7 @@ public class Enemy extends Entity {
      */
     @Override
     public void move() {
-        if(!this.target.intersects(super.x, super.y, super.width, super.height))
+        if (!this.target.intersects(super.x, super.y, super.width, super.height))
             super.moveEnemy();
 
         setFacing();
@@ -81,24 +77,26 @@ public class Enemy extends Entity {
 
     /**
      * enemy's health getter
+     *
      * @return hp
      */
-    public int getHp(){
+    public int getHp() {
         return hp;
     }
 
     /**
      * takes enemy's health
+     *
      * @param amount - amount of damage
      */
-    public void damage(int amount){
+    public void damage(int amount) {
         this.hp -= amount;
     }
 
     /**
      * sets enemy's facing
      */
-    public void setFacing(){
+    public void setFacing() {
         switch (super.facing) {
             case NORTH:
                 super.entityID = Resources.ENEMY_BACK;

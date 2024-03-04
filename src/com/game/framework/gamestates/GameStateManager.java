@@ -4,38 +4,37 @@ import java.awt.*;
 import java.util.Stack;
 
 public class GameStateManager {
+    private final Stack<GameState> states;
 
-    private Stack<GameState> states;
-
-    public GameStateManager(){
+    public GameStateManager() {
         this.states = new Stack<>();
     }
 
-    public void stackState(GameState state){
+    public void stackState(GameState state) {
         states.add(state);
     }
 
-    public void backToPrevious(){
+    public void backToPrevious() {
         states.pop();
     }
 
-    public void clearStack(){
+    public void clearStack() {
         states.clear();
     }
 
-    public void loop(){
+    public void loop() {
         states.peek().loop();
     }
 
-    public void render(Graphics g){
+    public void render(Graphics g) {
         states.peek().render(g);
     }
 
-    public void keyPressed(int keyCode){
+    public void keyPressed(int keyCode) {
         states.peek().keyPressed(keyCode);
     }
 
-    public void keyReleased(int keyCode){
+    public void keyReleased(int keyCode) {
         states.peek().keyReleased(keyCode);
     }
 }

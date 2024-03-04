@@ -10,9 +10,8 @@ import java.awt.*;
  * defines enemy
  */
 public class Player extends Entity {
-
+    private final int maxHp;
     private int hp;
-    private int maxHp;
     private byte regenDelay;
     private int armor;
     private int gold;
@@ -59,7 +58,7 @@ public class Player extends Entity {
         }
     }
 
-    public void restartPlayer(){
+    public void restartPlayer() {
         this.instantHeal(30);
         if (this.getArmor() < 10) {
             this.addArmor(10 - this.getArmor());
@@ -84,7 +83,7 @@ public class Player extends Entity {
 
     @Override
     public void move() {
-            super.move();
+        super.move();
         switch (super.facing) {
             case NORTH:
                 super.entityID = Resources.PLAYER_BACK;
@@ -160,7 +159,7 @@ public class Player extends Entity {
     public void damage(int amount) {
         if (this.damageTime == 0) {
             if (this.armor > 0) this.armor -= amount;
-            else{
+            else {
                 this.hp -= amount;
                 this.armor = 0;
             }
